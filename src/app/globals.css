@@ -5,11 +5,15 @@
   --foreground: #171717;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* custom breakpoints */
+  --breakpoint-xs: 20rem;
+  --breakpoint-2xl: 90rem;
 }
 
 @media (prefers-color-scheme: dark) {
