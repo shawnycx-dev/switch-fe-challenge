@@ -7,7 +7,11 @@ import { formatCurrency } from "@/shared/lib/currency";
 
 export default function ProductCard(product: Product) {
   return (
-    <Link className="border" key={product.id} href={`/products/${product.id}`}>
+    <Link
+      className="border rounded-md shadow-md"
+      key={product.id}
+      href={`/products/${product.id}`}
+    >
       <div className="p-4">
         <span className="text-xs text-gray-500">{product.category.name}</span>
         <h2 className="text-lg">{product.name}</h2>
