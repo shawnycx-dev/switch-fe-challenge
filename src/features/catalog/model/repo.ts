@@ -27,3 +27,10 @@ export async function getCatalogData(): Promise<CatalogSnapshot> {
     products,
   };
 }
+
+export async function getProductById(id: string) {
+  const { products } = await getCatalogData();
+  const product = products.find((p) => p.id === id);
+  if (!product) return null;
+  return product;
+}

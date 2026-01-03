@@ -1,0 +1,21 @@
+import type { Product } from "@/entities/product/model/types";
+import ProductRatings from "@/entities/product/ui/product-ratings";
+import { formatCurrency } from "@/shared/lib/currency";
+
+interface ProductPageProps {
+  product: Product;
+}
+
+export function ProductPage({ product }: ProductPageProps) {
+  return (
+    <div className="flex flex-col gap-2">
+      <span className="text-xs text-gray-600">{product.category.name}</span>
+      <div className="flex flex-col">
+        <h1 className="text-2xl font-bold">{product.name}</h1>
+        <ProductRatings rating={product.rating} />
+      </div>
+      <p className="text-gray-600">{product.description}</p>
+      <p className="text-lg font-bold">{formatCurrency(product.price)}</p>
+    </div>
+  );
+}
