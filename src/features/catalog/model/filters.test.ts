@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import devicesData from "@/data/devices.json";
 import categoriesData from "@/data/categories.json";
 import type { Product } from "@/entities/product/model/types";
-import { searchProducts } from "./filters";
+import { filterProductsByCategory, searchProducts } from "./filters";
 
 const products: Product[] = devicesData.map((d) => ({
   ...d,
@@ -48,5 +48,13 @@ describe("catalog filters", () => {
   it("returns all when query is empty", () => {
     expect(searchProducts(products, "").length).toBe(devicesData.length);
     expect(searchProducts(products, "   ").length).toBe(devicesData.length);
+  });
+
+  it("filters by category", () => {
+    expect(filterProductsByCategory(products, "Audio").length).toBe(22);
+    expect(filterProductsByCategory(products, "Peripherals").length).toBe(22);
+    expect(filterProductsByCategory(products, "Displays").length).toBe(14);
+    expect(filterProductsByCategory(products, "Accessories").length).toBe(21);
+    expect(filterProductsByCategory(products, "Gadgets").length).toBe(21);
   });
 });
