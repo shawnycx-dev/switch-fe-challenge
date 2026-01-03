@@ -13,7 +13,7 @@ const products: Product[] = devicesData.map((d) => ({
 }));
 
 describe("catalog filters", () => {
-  it("matches name or description (case-insensitive)", () => {
+  it("matches name or description (case-insensitive) in search", () => {
     expect(searchProducts(products, "Lamp").map((p) => p.id)).toEqual([
       "item-013",
     ]);
@@ -21,6 +21,28 @@ describe("catalog filters", () => {
       "item-015",
       "item-035",
     ]);
+  });
+
+  it("trims query and is case-insensitive", () => {
+    const a = searchProducts(products, "lamp").map((p) => p.id);
+    const b = searchProducts(products, "   LaMp   ").map((p) => p.id);
+    expect(b).toEqual(a);
+  });
+
+  it("does not mutate the input array", () => {
+    const original = [...products];
+    searchProducts(products, "lamp");
+    expect(products).toEqual(original);
+  });
+
+  it("matches when query appears in description (not just name)", () => {
+    // Pick a product and search using a token from its description to avoid hardcoding IDs.
+    const withDescription = products.find((p) => p.description?.trim().length);
+    expect(withDescription).toBeTruthy();
+
+    const token = withDescription!.description.trim().split(/\s+/)[0];
+    const matches = searchProducts(products, token);
+    expect(matches.some((p) => p.id === withDescription!.id)).toBe(true);
   });
 
   it("returns all when query is empty", () => {
