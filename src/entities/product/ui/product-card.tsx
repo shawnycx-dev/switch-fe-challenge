@@ -4,6 +4,7 @@ import type { Product } from "@/entities/product/model/types";
 import ProductRatings from "@/entities/product/ui/product-ratings";
 
 import { formatCurrency } from "@/shared/lib/currency";
+import FavoriteButton from "@/features/favorites/ui/favorite-button";
 
 export default function ProductCard(product: Product) {
   return (
@@ -17,6 +18,7 @@ export default function ProductCard(product: Product) {
         <h2 className="text-lg">{product.name}</h2>
         <ProductRatings rating={product.rating} />
         <p className="text-lg font-bold">{formatCurrency(product.price)}</p>
+        <FavoriteButton id={product.id} />
       </div>
       <span className="sr-only">View product</span>
     </Link>
