@@ -1,5 +1,6 @@
 import type { Product } from "@/entities/product/model/types";
 import ProductRatings from "@/entities/product/ui/product-ratings";
+import FavoriteButton from "@/features/favorites/ui/favorite-button";
 import { formatCurrency } from "@/shared/lib/currency";
 
 interface ProductPageProps {
@@ -16,6 +17,7 @@ export function ProductPage({ product }: ProductPageProps) {
       </div>
       <p className="text-gray-600">{product.description}</p>
       <p className="text-lg font-bold">{formatCurrency(product.price)}</p>
+      <FavoriteButton id={product.id} />
     </div>
   );
 }
