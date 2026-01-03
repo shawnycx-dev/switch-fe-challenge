@@ -22,7 +22,7 @@ export default async function Home({ searchParams }: HomeProps) {
     <main>
       <div className="p-4 w-full">
         <h1 className="text-4xl font-bold mb-4">Mini Catalog</h1>
-        <CatalogSearchForm/>
+        <CatalogSearchForm />
         <CatalogFilters categories={categories} selectedCategory={category} />
         <CatalogGrid categories={categories} products={searchedProducts} />
       </div>
