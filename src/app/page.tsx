@@ -1,6 +1,8 @@
-import { filterProductsByCategory } from "@/features/catalog/model/filters";
+import {
+  filterProductsByCategory,
+  searchProducts,
+} from "@/features/catalog/model/filters";
 import { getCatalogData } from "@/features/catalog/model/repo";
-import { searchProducts } from "@/features/catalog/model/search";
 import { loadCatalogSearchParams } from "@/features/catalog/model/search-params";
 import CatalogFilters from "@/features/catalog/ui/catalog-filters";
 import CatalogGrid from "@/features/catalog/ui/catalog-grid";
