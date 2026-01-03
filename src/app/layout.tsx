@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,9 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        {modal}
-        <div id="modal-root" />
+        <NuqsAdapter>
+          {children}
+          {modal}
+          <div id="modal-root" />
+        </NuqsAdapter>
       </body>
     </html>
   );
