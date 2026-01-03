@@ -57,4 +57,28 @@ describe("catalog filters", () => {
     expect(filterProductsByCategory(products, "Accessories").length).toBe(21);
     expect(filterProductsByCategory(products, "Gadgets").length).toBe(21);
   });
+
+  it("returns all products when category is undefined or empty string", () => {
+    // Note: current implementation treats only falsy values as 'no filter'
+    expect(filterProductsByCategory(products, undefined)).toBe(products); // same reference
+    expect(filterProductsByCategory(products, "")).toBe(products); // same reference
+  });
+
+  it("is case-insensitive when matching category name", () => {
+    const a = filterProductsByCategory(products, "Audio").map((p) => p.id);
+    const b = filterProductsByCategory(products, "aUdIo").map((p) => p.id);
+    expect(b).toEqual(a);
+  });
+
+  it("returns an empty array when category does not exist", () => {
+    expect(filterProductsByCategory(products, "__no_such_category__")).toEqual(
+      []
+    );
+  });
+
+  it("does not mutate the input array", () => {
+    const original = [...products];
+    filterProductsByCategory(products, "Audio");
+    expect(products).toEqual(original);
+  });
 });
