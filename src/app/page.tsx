@@ -6,7 +6,7 @@ export default async function Home() {
       <h1 className="text-4xl font-bold mb-4">Switch Frontend Challenge</h1>
       <p className="mb-4 text-lg text-balance max-w-[80ch] mx-auto">
         👋 Hello Team at Switch! Welcome to the Frontend Take-Home Challenge.
-        Thanks for the opportunity to take on this challeng, I had a lot of fun
+        Thanks for the opportunity to take on this challenge, I had a lot of fun
         working on it. I kept the project simple and focused on the core
         features. Feel free to check out the{" "}
         <Link
