@@ -23,13 +23,20 @@ export default async function Home({ searchParams }: HomeProps) {
   const searchedProducts = searchProducts(filteredProducts, q);
   const sortedProducts = sortProducts(searchedProducts, sort);
 
+  const totalProducts = searchedProducts.length;
+
   return (
     <main>
       <div className="p-4 w-full">
-        <h1 className="text-4xl font-bold mb-4">Mini Catalog</h1>
-        <CatalogSort />
-        <CatalogSearchForm />
-        <CatalogFilters categories={categories} selectedCategory={category} />
+        <h1 className="text-4xl font-bold mb-4">Devices ({totalProducts})</h1>
+        <div className="flex flex-col-reverse md:flex-row md:items-center gap-2 mb-2">
+          <CatalogFilters categories={categories} selectedCategory={category} />
+
+          <div className="md:ml-auto flex flex-col md:flex-row gap-4 items-start md:items-center">
+            <CatalogSort />
+            <CatalogSearchForm />
+          </div>
+        </div>
         <CatalogGrid categories={categories} products={sortedProducts} />
       </div>
     </main>
