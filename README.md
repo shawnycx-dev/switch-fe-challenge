@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Switch Frontend Challenge
+
+A small “Mini Catalog” web app where users can browse products, search, filter by category, sort, view product details (page + modal route), and favorite items (persisted).
+
+Check out the [instructions](./INSTRUCTIONS.md) for more details.
+
+This project follows the feature-sliced architecture pattern and is organized into the following directories:
+
+- `src/app`: The main application entry point.
+- `src/features`: The main features of the application.
+- `src/entities`: The entities of the application.
+- `src/shared`: The shared components and utilities of the application.
+
+## What I'd improve with more time
+
+- Consider using the domain-driven design pattern instead of feature-sliced architecture. This would help with the separation of concerns and make the code more maintainable but takes a lot of time to properly implement.
+- Given more time, I'd like to spend more time on the UI/UX and make it more responsive and accessible.
+- Set up a proper CI/CD pipeline to automate the tests and deployment process.
+- Set up proper instrumentation for analytics and error tracking.
+- Improve search by adding fuzzy search and autocomplete.
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
 bun dev
 ```
 
+If bun is not installed, check out the [Bun website](https://bun.sh/) for installation instructions.
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Testing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses [Vitest](https://vitest.dev/) for testing.
 
-## Learn More
+- Headless run (CI-style):
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+bun test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Watch mode:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+bun test:watch
+```
 
-## Deploy on Vercel
+- UI mode:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+bun test:ui
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Key packages introduced (why they're used):
+
+> Each of these packages is used in exchange for speed and convenience without sacrificing bundle size. In a real-world application, we'd likely want to consider auditing for security purposes or run our own custom implementation.
+
+- `nuqs`: Nuqs is a simple, lightweight, and easy-to-use library for managing URL query state in React applications.
+- `clsx + tailwind-merge`: Composed via a cn() helper function to build Tailwind class strings safely.
+- `tailwindcss`: Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces.
