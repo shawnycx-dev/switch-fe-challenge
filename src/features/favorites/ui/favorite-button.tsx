@@ -15,7 +15,7 @@ export default function FavoriteButton({ id }: { id: Product["id"] }) {
 
   return (
     <button
-      className="bg-gray-900 text-white px-4 py-2 rounded-md hover:cursor-pointer"
+      className="bg-gray-900 dark:bg-gray-300 text-white dark:text-gray-800 px-4 py-2 rounded-md hover:cursor-pointer"
       type="button"
       onClick={handleOnClick}
     >

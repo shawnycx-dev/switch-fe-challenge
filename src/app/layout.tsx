@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import { ThemeProvider } from "next-themes";
+import Header from "@/shared/ui/header";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,15 +30,23 @@ export default function RootLayout({
   modal: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NuqsAdapter>
-          {children}
-          {modal}
-          <div id="modal-root" />
-        </NuqsAdapter>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NuqsAdapter>
+            <Header />
+            {children}
+            {modal}
+            <div id="modal-root" />
+          </NuqsAdapter>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -25,7 +25,7 @@ export function Modal({ children }: { children: React.ReactNode }) {
     <>
       <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-1000">
         <dialog
-          className="w-[80%] max-w-120 max-h-120 h-auto bg-white relative flex flex-col items-center justify-center rounded-md shadow-md"
+          className="w-[80%] max-w-120 max-h-120 h-auto bg-white dark:bg-gray-900 relative flex flex-col items-center justify-center rounded-md shadow-md"
           onClose={onDismiss}
         >
           <button

@@ -10,13 +10,15 @@ interface ProductPageProps {
 export function ProductPage({ product }: ProductPageProps) {
   return (
     <div className="flex flex-col gap-2">
-      <span className="text-xs text-gray-600">{product.category.name}</span>
+      <span className="text-xs text-gray-600 dark:text-gray-300">
+        {product.category.name}
+      </span>
       <div className="flex flex-col">
         <h1 className="text-2xl font-bold">{product.name}</h1>
         <ProductRatings rating={product.rating} />
       </div>
-      <p className="text-gray-600">{product.description}</p>
-      <p className="text-lg font-bold">{formatCurrency(product.price)}</p>
+      <p className="text-gray-600 dark:text-gray-300">{product.description}</p>
+      <p className="text-2xl font-bold">{formatCurrency(product.price)}</p>
       <FavoriteButton id={product.id} />
     </div>
   );
