@@ -11,7 +11,7 @@ export default async function Home() {
         features. Feel free to check out the{" "}
         <Link
           href="https://github.com/shawnycx-dev/switch-fe-challenge"
-          className="no-underline hover:underline text-blue-500"
+          className="no-underline hover:underline text-blue-600 dark:text-yellow-300"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -22,7 +22,7 @@ export default async function Home() {
 
       <Link
         href="/catalog"
-        className="no-underline hover:underline text-blue-500"
+        className="no-underline hover:underline text-blue-600 dark:text-yellow-300"
       >
         Go to catalog page →
       </Link>

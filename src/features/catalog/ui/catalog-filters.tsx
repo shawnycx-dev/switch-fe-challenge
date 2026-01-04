@@ -22,7 +22,7 @@ const FilterButton = ({
     <Link
       className={cn(
         "transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded py-1",
-        isActive && "text-blue-500 font-semibold",
+        isActive && "text-blue-600 dark:text-yellow-300 font-semibold",
         className
       )}
       href={href}
