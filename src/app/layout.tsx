@@ -42,7 +42,7 @@ export default function RootLayout({
         >
           <NuqsAdapter>
             <Header />
-            {children}
+            <main>{children}</main>
             {modal}
             <div id="modal-root" />
           </NuqsAdapter>

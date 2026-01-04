@@ -43,7 +43,7 @@ export default function CatalogFilters({
     <nav className="my-2" aria-labelledby={filterId}>
       <h2 id={filterId}>Filter by category:</h2>
       <div className="flex gap-2 items-center flex-wrap">
-        <FilterButton isActive={!selectedCategory} href="/">
+        <FilterButton isActive={!selectedCategory} href="/catalog">
           All
         </FilterButton>
 
@@ -55,7 +55,7 @@ export default function CatalogFilters({
           return (
             <FilterButton
               key={c.id}
-              href={`/?category=${encodedCategory}`}
+              href={`/catalog?category=${encodedCategory}`}
               isActive={isSelected}
             >
               {c.name}

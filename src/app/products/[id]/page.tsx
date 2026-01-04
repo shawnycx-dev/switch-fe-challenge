@@ -29,7 +29,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     <div className="max-w-120 mx-auto p-8">
       <Link
         className="text-sm text-gray-600 dark:text-gray-300 inline-block mb-8"
-        href="/"
+        href="/catalog"
       >
         ← Back to Catalog
       </Link>
