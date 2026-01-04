@@ -4,6 +4,28 @@ A small “Mini Catalog” web app where users can browse products, search, filt
 
 Check out the [instructions](./INSTRUCTIONS.md) for more details.
 
+Catalog List:
+- ✅ Search by name/description.
+- ✅ Filter by category.
+- ✅ Sort by one or more of: name, price, rating, category.
+
+Item Detail:
+- ✅ Dedicated page/route OR a modal with more info (e.g., full description, price/rating).
+- ✅ Include a Favorite toggle.
+
+Favorites:
+- ✅ Favorite/unfavorite items from list and detail.
+- ✅ Persist favorites using localStorage.
+
+Responsive & Accessible:
+- ✅ Usable on mobile through desktop (≈ 320p to 1440px+).
+- ✅ Semantic HTML, labeled inputs, visible focus, reasonable color contrast.
+- ✅ Keyboard navigable (tab, enter/space on buttons/controls).
+
+Nice-to-Have
+- ✅ Dark mode toggle
+- ✅ Debounced search and URL-synced state (e.g., ?q=&category=&sort=).
+
 This project follows the feature-sliced architecture pattern and is organized into the following directories:
 
 - `src/app`: The main application entry point.
