@@ -82,3 +82,7 @@ bun test:ui
 - `nuqs`: Nuqs is a simple, lightweight, and easy-to-use library for managing URL query state in React applications.
 - `clsx + tailwind-merge`: Composed via a cn() helper function to build Tailwind class strings safely.
 - `tailwindcss`: Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces.
+
+## AI Usage
+
+Usage of AI was spent mostly on writing tests, usage in other parts of the codebase was kept to a minimum such as autocomplete in IDEs and splitting up requirements into acceptance criteria for better readability.
